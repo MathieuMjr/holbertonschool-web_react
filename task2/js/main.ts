@@ -44,7 +44,11 @@ function createEmployee(salary: number | string): Teacher | Director {
   }
   return new Director();
 }
+// la consigne ne demande pas faire en sorte qu'on lise la valeur d'une string...
+// si on passe '500', ça doit créer un directeur ; bof/20
 
+// Predicate function a cette syntaxe
+// on peut vérifier si a méthode est un attribut de la classe Director
 function isDirector(employee: any): employee is Director {
   return typeof employee === 'object' &&
   employee !== null &&
