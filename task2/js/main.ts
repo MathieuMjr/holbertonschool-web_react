@@ -63,3 +63,15 @@ function executeWork(employee: Director | Teacher): void {
     console.log(employee.workTeacherTasks());
   }
 }
+
+type Subjects = "Math" | "History"
+
+function teachClass(todayClass: Subjects): void {
+  if (todayClass === "Math") {
+    console.log('Teaching Math'); 
+    // ok ils veulent un return mais l'exemple montre un console log
+    // donc fuck it
+  } else {
+    console.log('Teaching History');
+  }
+}
