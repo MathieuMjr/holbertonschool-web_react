@@ -39,6 +39,36 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 // l'interface concerne d'abord une variable. 
 // pour l'appliquer à une fonction on commencera donc par déclarer une variable du nom de la fonction voulue avec const
 
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor({ firstName, lastName}: StudentConstructor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working'
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
 console.log(printTeacher('John', 'Doe'));
 
 console.log(director1);
